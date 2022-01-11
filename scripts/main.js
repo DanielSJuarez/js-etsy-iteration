@@ -57,5 +57,10 @@ larMat.forEach(function(key) {
     console.log(`\n`);
 });
 
+//Calculates how many items were made by sellers
+const selMade = items.filter(function(key){
+    return key.who_made == "i_did"
+});
 
+console.log(`${selMade.length} were made by their sellers`)
 
