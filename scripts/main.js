@@ -20,15 +20,15 @@ const priceList = items.filter(function(key){
 console.log(priceList)
 
 //Finds items with GBP code and returns the item and price
-const curCodTitle = items.map(function(code){
-        if(code.currency_code == "GBP"){
-            return code.title 
+const curCodTitle = items.map(function(key){
+        if(key.currency_code == "GBP"){
+            return key.title 
         }
 })
 
-const curCodePrice = items.map(function(code){
-    if(code.currency_code == "GBP"){
-        return code.price 
+const curCodePrice = items.map(function(key){
+    if(key.currency_code == "GBP"){
+        return key.price 
     }
 })
 
@@ -44,5 +44,18 @@ const woodTitle = woodMat.forEach(function(key){
     console.log(`${key.title} is made of wood`);
 })
 
-console.log(woodTitle);
+//Shows which items were made out of more then eight materials
+const larMat = items.filter(function(key){
+    return key.materials.length >= 8
+});
+
+larMat.forEach(function(key) {
+    console.log(`${key.title}`);
+    key.materials.forEach(function(material) {
+        console.log(material);
+    });
+    console.log(`\n`);
+});
+
+
 
