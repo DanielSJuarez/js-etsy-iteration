@@ -32,7 +32,17 @@ const curCodePrice = items.map(function(code){
     }
 })
 
-console.log(`${curCodTitle.join('')} cost $${curCodePrice.join('')}`);
+console.log(`${curCodTitle.join('')} cost £${curCodePrice.join('')}`);
 
 //Finds which items are made of wood
+const woodMat = items.filter(function(key){
+    if(key.materials.includes('wood'))
+    return key 
+})
+
+const woodTitle = woodMat.forEach(function(key){
+    console.log(`${key.title} is made of wood`);
+})
+
+console.log(woodTitle);
 
