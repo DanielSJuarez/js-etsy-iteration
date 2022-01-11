@@ -19,9 +19,20 @@ const priceList = items.filter(function(key){
 })
 console.log(priceList)
 
-//Find item with GBP code and returns the item and price
-const curCode = items.reduce(function(code){
-    
+//Finds items with GBP code and returns the item and price
+const curCodTitle = items.map(function(code){
+        if(code.currency_code == "GBP"){
+            return code.title 
+        }
 })
 
-//console.log(`${} cost ${}`);
+const curCodePrice = items.map(function(code){
+    if(code.currency_code == "GBP"){
+        return code.price 
+    }
+})
+
+console.log(`${curCodTitle.join('')} cost $${curCodePrice.join('')}`);
+
+//Finds which items are made of wood
+
