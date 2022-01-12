@@ -1,3 +1,5 @@
+(function() {
+    'use strict';
 //Get average price of the items
 const prices = items.map(function(item){
     return item.price;
@@ -95,3 +97,4 @@ const selMade = items.filter(function(key){
 
 console.log(`${selMade.length} were made by their sellers`)
 
+})();
