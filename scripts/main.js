@@ -1,12 +1,11 @@
 //Get average price of the items
 const prices = items.map(function(item){
     return item.price;
-});
+}); 
 
-let amount = 0;
-for(let i = 0; i < prices.length; i++) {
-    amount += prices[i];
-} 
+const amount = prices.reduce(function(acc, i){
+    return acc + i;
+})
 
 let average = amount / prices.length;
 console.log(`The average price is $${average.toFixed(2)}`)
